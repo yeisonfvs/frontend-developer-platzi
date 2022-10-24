@@ -28,6 +28,8 @@ function toggleMobileMenu() {
         aside.classList.add('inactive')
     }
     mobileMenu.classList.toggle('inactive');
+
+    closeProductDetailAside();
 }
 
 function toggleAside() {
@@ -36,19 +38,32 @@ function toggleAside() {
         desktopMenu.classList.add('inactive')
     }
 
+    const isProductDetail2Closed = productDetail2.classList.contains('inactive');
+    if (!isProductDetail2Closed) {
+        productDetail2.classList.add('inactive')
+    }
+
     const ismobileMenuclosed = mobileMenu.classList.contains('inactive');
     if (!ismobileMenuclosed) {
         mobileMenu.classList.add('inactive')
     }
+
+
+
     aside.classList.toggle('inactive');
+
+   
+   
 }
 
 function openProductDetail2 () {
     productDetail2.classList.remove('inactive');
+    aside.classList.add('inactive');
 
 }
 
 function  closeProductDetailAside () {
+   
     productDetail2.classList.add('inactive');
 }
 
